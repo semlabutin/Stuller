@@ -18,20 +18,12 @@ describe('Contact Information Page tests', () => {
     cy.loginAPI(user.login, user.password);
   });
 
-  // it('Should verify Contact Information', () => {
-  //   cy.visit("/myaccount/");
-  //   MyAccountPage.linkContactInfo.click()
-  //   ContactInfoPage.fieldFirstName.invoke('val').should('eq', 'DIGITAL')
-  //   ContactInfoPage.fieldLastName.invoke('val').should('eq', 'TESTING')
-
-  // })
-
   it('Should be able to change First Name', () => {
     cy.visit("/myaccount/");
     MyAccountPage.linkContactInfo.click()
     ContactInfoPage.fieldFirstName.clear('').type('NEWNAME')
     ContactInfoPage.btnSaveChanges.click()
-    ContactInfoPage.msgSavedSuccessfully.contains('Contact Saved Successfully.')
+    ContactInfoPage.msgSavedSuccessfully.contains(msg.Successfull)
     ContactInfoPage.fieldFirstName.invoke('val').should('eq', 'NEWNAME')
     ContactInfoPage.fieldFirstName.clear('').type('DIGITAL')
     ContactInfoPage.btnSaveChanges.click()
