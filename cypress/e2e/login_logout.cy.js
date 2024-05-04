@@ -4,7 +4,7 @@ import MyAccountPage from "../fixtures/Page_Objects/myacct.page";
 
 let user
 
-describe('Positive log in', () => {
+describe('Positive log in, log out', () => {
   before(() => {
     cy.fixture("userCredentials.json").then((data) => {
       user = data
@@ -12,7 +12,7 @@ describe('Positive log in', () => {
   })
 
 
-  it('Should log it with user credentials', () => {
+  it('Should log it with valid user credentials', () => {
     cy.visit("/");
     LoginForm.btnAccount.click()
     LoginForm.login(user.login, user.password)

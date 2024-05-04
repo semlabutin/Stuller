@@ -18,7 +18,7 @@ describe('Contact Information Page tests', () => {
     cy.loginAPI(user.login, user.password);
   });
 
-  it('Should be able to change First Name', () => {
+  it('Should be able to change the First Name', () => {
     cy.visit("/myaccount/");
     MyAccountPage.linkContactInfo.click()
     ContactInfoPage.fieldFirstName.clear('').type('NEWNAME')
@@ -32,7 +32,7 @@ describe('Contact Information Page tests', () => {
 
   })
 
-  it('Should not allow use digits in the First Name', () => {
+  it('Should not allow the use of digits in the First Name', () => {
     cy.visit("/myaccount/");
     MyAccountPage.linkContactInfo.click()
     ContactInfoPage.fieldFirstName.clear('').type('DIGITAL1')
