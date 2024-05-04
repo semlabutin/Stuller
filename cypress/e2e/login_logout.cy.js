@@ -11,15 +11,22 @@ describe('Positive log in', () => {
     })
   })
 
-  beforeEach(() => {
-    cy.visit("/");
-  });
 
   it('Should log it with user credentials', () => {
-    cy.get('#Account').click()
-    LoginForm.fieldUserName.click().clear().type(user.login)
-    LoginForm.fieldPassword.click().clear().type(user.password)
-    LoginForm.btnLogin.click()
+    cy.visit("/");
+    LoginForm.btnAccount.click()
+    LoginForm.login(user.login, user.password)
     MyAccountPage.btnMessages.should("be.visible")
   })
+
+  it('Should log out', () => {
+    cy.loginAPI(user.login, user.password);
+    cy.visit("/");
+    LoginForm.btnAccount.click()
+    LoginForm.btnLogout.click()
+    LoginForm.btnAccount.click()
+    LoginForm.btnLogin.should("be.visible")
+
+  })
+
 })

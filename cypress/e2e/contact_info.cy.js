@@ -11,7 +11,7 @@ describe('Contact Information Page tests', () => {
   })
 
   beforeEach(() => {
-    cy.loginUI(user.login, user.password);
+    cy.loginAPI(user.login, user.password);
   });
 
   it('Should verify Contact Information', () => {
