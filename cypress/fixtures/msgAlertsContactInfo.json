@@ -1,0 +1,5 @@
+{
+    "Successfull": "Contact Saved Successfully.",
+    "ErrorFirstNameLimitations": "First Name must only contain letters, spaces, or hyphens.",
+    "ErrorNotAllowedFirstName": "The name entered is not allowed."
+}

@@ -7,18 +7,7 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-// import LoginForm from "../fixtures/Page_Objects/login.form";
-// import MyAccountPage from "../fixtures/Page_Objects/myacct.page";
 
-
-// Cypress.Commands.add('loginUI', (login, password) => {
-//     cy.visit("/")
-//     LoginForm.btnAccount.click()
-//     LoginForm.login(login, password)
-//     cy.wait(1000)
-//     MyAccountPage.btnMessages.should("be.visible")
-
-// })
 
 Cypress.Commands.add('loginAPI', (login, password) => {
     cy.request('POST', 'https://www.stuller.com/loginjson', {
