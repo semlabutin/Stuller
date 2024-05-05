@@ -1,5 +1,5 @@
 class MyAccountPage {
-    get btnMessages() { return cy.get('[id="Messages"]'); }
+    get btnMessages() { return cy.get('#Messages'); }
     get linkContactInfo() { return cy.contains('Contact Information'); }
 }
 

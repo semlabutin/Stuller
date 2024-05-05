@@ -6,8 +6,8 @@ class LoginForm {
     get btnLogout() { return cy.get('[data-test="logout-button-in-account-dropdown"]') }
 
     login(user, password) {
-        this.fieldUserName.click().clear().type(user)
-        this.fieldPassword.click().clear().type(password)
+        this.fieldUserName.click().type(user)
+        this.fieldPassword.click().type(password)
         this.btnLogin.click();
     }
 }
